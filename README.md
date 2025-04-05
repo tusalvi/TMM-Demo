@@ -73,27 +73,8 @@ For detailed setup instructions, refer to the [Clickstream Data Analysis Pipelin
    ```
 
 
-7. **View Dashboards in Grafana**:
-
-   Once the data is being processed and stored in Elasticsearch, access Grafana to visualize the analytics through pre-configured dashboards.
-
-   Navigate to `http://localhost:3000` in your web browser to access Grafana.
-
 ## Key Features
 
 - **Real-Time Data Processing**: Utilizes ksqlDB to process and analyze streaming data in real-time.
 - **Scalable Data Integration**: Employs Kafka Connect to integrate with various data sources and sinks, facilitating scalable data pipelines.
 - **Interactive Visualizations**: Leverages Grafana to create interactive and insightful dashboards for data visualization.
-
-## Additional Resources
-
-- **Blog Post**: For a comprehensive walkthrough of this project, refer to the blog post [Leverage Real-Time Clickstream Data Using ksqlDB and Elasticsearch](https://www.confluent.io/blog/clickstream-data-and-analytics-with-confluent-ksqldb-kafka-connect/).
-- **Confluent Documentation**: Explore the [Clickstream Data Analysis Pipeline tutorial](https://docs.confluent.io/platform/current/ksqldb/tutorials/clickstream.html) for detailed instructions and explanations.
-
-## License
-
-This project is licensed under the Confluent Community License. For more details, refer to the `LICENSE` file in the repository.
-
----
-
-By following these instructions, you can set up a real-time clickstream data analytics pipeline to gain valuable insights into user behavior on your website. 
