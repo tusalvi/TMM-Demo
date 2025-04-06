@@ -1,0 +1,48 @@
+Select * from [AdventureWorks2022].[dbo].[vodclickstream_uk_movies_03];
+
+SELECT
+      [movie_id],
+      title,
+      sum(duration)
+  FROM [AdventureWorks2022].[dbo].[vodclickstream_uk_movies_03]
+ -- Where release_date like '%N%'
+ Group by movie_id, title
+ order by 3 DESC;
+/*
+Here’s a SQL query to help you analyze daily engagement patterns for each movie title from the Netflix UK clickstream dataset:
+
+Assuming the dataset has a table (say netflix_clickstream) with columns similar to:
+
+title (movie/show title)
+date (date of the view)
+duration or watch_time (watch time in seconds or minutes — depending on the schema)
+user_id or session identifier
+Here’s a SQL query that gives you daily view counts and total watch time per movie title:
+*/
+ SELECT
+    title,
+    datetime AS view_date,
+    COUNT(*) AS daily_view_count,
+    SUM(duration) AS total_watch_time
+FROM
+   [AdventureWorks2022].[dbo].[vodclickstream_uk_movies_03]
+GROUP BY title,  datetime
+ORDER BY title, view_date;
+/*
+Notes:
+duration: Replace with the actual column name that indicates the time watched.
+date: Replace with the actual timestamp column name (e.g., watch_time_start, session_start, etc.).
+COUNT(*): Counts the number of views per day per title.
+SUM(duration): Aggregates total watch time to track engagement.
+If you'd like to also track unique viewers per day:
+*/
+
+SELECT
+    title,
+    datetime AS view_date,
+    COUNT(*) AS daily_view_count,
+    COUNT(DISTINCT user_id) AS unique_viewers,
+    SUM(duration) AS total_watch_time
+FROM [AdventureWorks2022].[dbo].[vodclickstream_uk_movies_03]
+GROUP BY title, datetime
+ORDER BY title, view_date;
