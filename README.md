@@ -1,4 +1,4 @@
-Here’s a SQL query to help you analyze **daily engagement patterns** for each movie title from the Netflix UK clickstream dataset:
+Ansewr to Q2: Analyze daily engagement patterns for each movie title. Calculate daily view counts and total watch time for each title to track how user interest fluctuates day by day.
 
 Assuming the dataset has a table (say `netflix_clickstream`) with columns similar to:
 - `title` (movie/show title)
